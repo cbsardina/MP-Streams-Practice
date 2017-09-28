@@ -155,9 +155,17 @@ public class Main {
         System.out.println("For Loop:");
         List<Entry> greaterThan50 = new ArrayList<>();
         // write for loop
+        for(Entry entry: entries) {
+            if(entry.getDuration() > 50) {
+                greaterThan50.add(entry);
+            }
+        }
         System.out.println(greaterThan50);
         System.out.println("Stream, filter, collect:");
         // write stream
+        greaterThan50 = entries.stream()
+                .filter(entry -> entry.getDuration() >50)
+                .collect(Collectors.toList());
         System.out.println(greaterThan50);
         System.out.println();
     }
