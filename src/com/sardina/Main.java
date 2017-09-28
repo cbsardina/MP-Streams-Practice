@@ -68,7 +68,7 @@ public class Main {
     }
 
     public static void weekendList(List<Entry> entries) {
-        System.out.println("*****");
+        System.out.println("-----");
         //Create a list of weekend (Saturday and Sunday) entries
         System.out.println("For Loop:");
         List<Entry> weekends = new ArrayList<>();
@@ -81,27 +81,42 @@ public class Main {
         System.out.println("Stream, filter, collect:");
 //        weekends = // write stream use collect as the terminal operation
 //                System.out.println(weekends);
-        entries.stream()
+        weekends = entries.stream()
                 .filter(entry -> entry.getDay().equals(Day.SATURDAY)||entry.getDay().equals(Day.SUNDAY))
-        System.out.println();
-        System.out.println("*****");
+                .collect(Collectors.toList());
+        System.out.println(weekends);
+        System.out.println("-----");
     }
 
     public static void weekdaySet(List<Entry> entries) {
+        System.out.println("=====");
         //Create a SET of weekday entries
         System.out.println("For Loop:");
         Set<String> weekdays = new HashSet<>();
-        // write for loop
+        for(Entry entry: entries) {
+            if (!entry.getDay().equals(Day.SATURDAY) && !entry.getDay().equals(Day.SUNDAY)) {
+                String tempEntry = entry.toString();
+                weekdays.add(tempEntry);
+            }
+        }
         System.out.println(weekdays);
         System.out.println("Stream, filter, map, collect:");
 //        weekdays = // write stream
 //                System.out.println(weekdays);
-        System.out.println();
+        weekdays = entries.stream()
+                .filter(entry -> !entry.getDay().equals(Day.SATURDAY) && !entry.getDay().equals(Day.SUNDAY))
+                .map(entry -> entry.toString())
+                .collect(Collectors.toSet());
+
+        System.out.println(weekdays);
+        System.out.println("=====");
     }
 
     public static void printDurationGreaterThan10(List<Entry> entries){
         System.out.println("For Loop:");
         // write for loop
+        for(Entry entry: entries) {
+        }
         System.out.println("Stream, filter, forEach:");
         // write stream
         System.out.println();
