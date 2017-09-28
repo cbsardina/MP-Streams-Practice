@@ -113,30 +113,48 @@ public class Main {
     }
 
     public static void printDurationGreaterThan10(List<Entry> entries){
+        System.out.println("-----");
         System.out.println("For Loop:");
         // write for loop
         for(Entry entry: entries) {
+            if(entry.getDuration() > 10) {
+                System.out.println(entry);
+            }
         }
         System.out.println("Stream, filter, forEach:");
         // write stream
-        System.out.println();
+        entries.stream()
+                .filter(entry -> entry.getDuration() > 10)
+                .forEach(entry -> System.out.println(entry));
+        System.out.println("-----");
     }
 
     public static void findMaxDuration(List<Entry> entries){
+        System.out.println("=====");
         System.out.println("For Loop:");
         int temp = 0;
         // write for loop
+        for(Entry entry: entries) {
+            if(entry.getDuration() > temp) {
+                temp = entry.getDuration();
+            }
+        }
         System.out.println("The Max Duration is: " + temp);
         System.out.println("Stream, mapToInt, max, getAsInt:");
-//        temp = // write stream use mapToInt then max the getAsInt
+        temp = entries.stream()
+                .mapToInt(entry -> entry.getDuration())
+                .max()
+                .getAsInt();
+// write stream use mapToInt then max the getAsInt
 //                System.out.println("The Max Duration is: " + temp);
-        System.out.println();
+        System.out.println(temp);
+        System.out.println("=====");
     }
 
     public static void listGreaterThan50(List<Entry> entries){
         System.out.println("For Loop:");
         List<Entry> greaterThan50 = new ArrayList<>();
-        // write for looop
+        // write for loop
         System.out.println(greaterThan50);
         System.out.println("Stream, filter, collect:");
         // write stream
