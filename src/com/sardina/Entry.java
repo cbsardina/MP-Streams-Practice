@@ -41,47 +41,41 @@ public class Entry {
     }
 
 
-
     public static List<Entry> populate(){
         List<Entry> entries = new ArrayList<>();
         Random random = new Random();
-        ArrayList<Integer> randomInts = new ArrayList<>();
-        for(int i =0; i<11; i++){
-            int temp = random.nextInt(101);
-            randomInts.add(temp);
-        }
 
-        Entry entry = new Entry(Day.MONDAY,"Today I went to play sports", randomInts.get(0));
+        Entry entry = new Entry(Day.MONDAY,"Today I went to play sports", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.TUESDAY,"Lunch was a salad today... was still hungry", randomInts.get(1));
+        entry = new Entry(Day.TUESDAY,"Lunch was a salad today... was still hungry", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.WEDNESDAY,"Hump day! Looking forward to the weekend.", randomInts.get(2));
+        entry = new Entry(Day.WEDNESDAY,"Hump day! Looking forward to the weekend.", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.WEDNESDAY,"Why isn't the day over yet?!", randomInts.get(3));
+        entry = new Entry(Day.WEDNESDAY,"Why isn't the day over yet?!", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.THURSDAY,"Poker night", randomInts.get(4));
+        entry = new Entry(Day.THURSDAY,"Poker night", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.FRIDAY,"Finally Friday!", randomInts.get(5));
+        entry = new Entry(Day.FRIDAY,"Finally Friday!", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.SATURDAY,"Saturdaze", randomInts.get(6));
+        entry = new Entry(Day.SATURDAY,"Saturdaze", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.SUNDAY,"Sunday Bumday", randomInts.get(7));
+        entry = new Entry(Day.SUNDAY,"Sunday Bumday", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.MONDAY,"I dont like writing in this journal", randomInts.get(8));
+        entry = new Entry(Day.MONDAY,"I dont like writing in this journal", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.SATURDAY,"Why am I writing on a Saturday?", randomInts.get(9));
+        entry = new Entry(Day.SATURDAY,"Why am I writing on a Saturday?", random.nextInt(100));
         entries.add(entry);
 
-        entry = new Entry(Day.TUESDAY,"toooos day", randomInts.get(10));
+        entry = new Entry(Day.TUESDAY,"toooos day", random.nextInt(100));
         entries.add(entry);
 
         return entries;
